@@ -220,10 +220,10 @@ export class RealtimeClient extends RealtimeEventHandler {
     reset(): true;
     /**
      * Connects to the Realtime WebSocket API
-     * Updates session config and conversation config
+     * @param {{ model?: string }} [options]
      * @returns {Promise<true>}
      */
-    connect(): Promise<true>;
+    connect(options?: { model?: string }): Promise<true>;
     /**
      * Waits for a session.created event to be executed before proceeding
      * @returns {Promise<true>}
@@ -336,7 +336,7 @@ export type SessionResourceType = {
     model?: string;
     modalities?: string[];
     instructions?: string;
-    voice?: "alloy"|"ash"|"ballad"|"coral"|"echo"|"sage"|"shimmer"|"verse";
+    voice?: string;
 
     input_audio_format?: AudioFormatType;
     output_audio_format?: AudioFormatType;
