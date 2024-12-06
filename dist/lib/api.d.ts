@@ -28,11 +28,12 @@ export class RealtimeAPI extends RealtimeEventHandler {
     log(...args: any[]): true;
     /**
      * Connects to Realtime API Websocket Server
-     * @param {{model?: string}} [settings]
+     * @param {{model?: string, userId?: string}} [settings]
      * @returns {Promise<true>}
      */
-    connect({ model }?: {
+    connect({ model, userId}?: {
         model?: string;
+        userId?: string;
     }): Promise<true>;
     /**
      * Disconnects from Realtime API server

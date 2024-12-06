@@ -220,10 +220,10 @@ export class RealtimeClient extends RealtimeEventHandler {
     reset(): true;
     /**
      * Connects to the Realtime WebSocket API
-     * @param {{ model?: string }} [options]
+     * @param {{ model?: string, userId?: string }} [options]
      * @returns {Promise<true>}
      */
-    connect(options?: { model?: string }): Promise<true>;
+    connect(options?: { model?: string, userId?: string }): Promise<true>;
     /**
      * Waits for a session.created event to be executed before proceeding
      * @returns {Promise<true>}
