@@ -311,7 +311,7 @@ export class RealtimeClient extends RealtimeEventHandler {
 /**
  * Valid audio formats
  */
-export type AudioFormatType = "pcm16" | "g711_ulaw" | "g711_alaw";
+export type AudioFormatType = "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw44100Hz16BitMonoPcm" | "MonoMp3";
 export type AudioTranscriptionType = {
     model: "whisper-1";
 };
@@ -352,7 +352,7 @@ export type SessionResourceType = {
 };
 export type ItemStatusType = "in_progress" | "completed" | "incomplete";
 export type InputTextContentType = {
-    type: "input_text";
+    type: "input_text" | "tts_text";
     text: string;
 };
 export type InputAudioContentType = {
