@@ -1,6 +1,6 @@
 /**
  * Valid audio formats
- * @typedef {"pcm16"|"g711_ulaw"|"g711_alaw"} AudioFormatType
+ * @typedef {"Audio16KHz16BitMonoOpus" | "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw44100Hz16BitMonoPcm" | "MonoMp3"} AudioFormatType
  */
 /**
  * @typedef {Object} AudioTranscriptionType
@@ -311,7 +311,7 @@ export class RealtimeClient extends RealtimeEventHandler {
 /**
  * Valid audio formats
  */
-export type AudioFormatType = "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw44100Hz16BitMonoPcm" | "MonoMp3";
+export type AudioFormatType = "Audio24KHz16Bit48KbpsMonoOpus" | "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw44100Hz16BitMonoPcm" | "MonoMp3";
 export type AudioTranscriptionType = {
     model: "whisper-1";
 };
