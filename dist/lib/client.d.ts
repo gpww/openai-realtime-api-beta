@@ -1,6 +1,6 @@
 /**
  * Valid audio formats
- * @typedef {"Audio16KHz16BitMonoOpus" | "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw44100Hz16BitMonoPcm" | "MonoMp3"} AudioFormatType
+ * @typedef {"Audio16KHz16BitMonoOpus" | "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw24KHz16BitMonoPcm" | "Raw44KHz16BitMonoPcm" | "MonoMp3"} AudioFormatType
  */
 /**
  * @typedef {Object} AudioTranscriptionType
@@ -286,11 +286,11 @@ export class RealtimeClient extends RealtimeEventHandler {
     /**
      * Cancels the ongoing server generation and truncates ongoing generation, if applicable
      * If no id provided, will simply call `cancel_generation` command
-     * @param {string} id The id of the message to cancel
+     * @param {string} [id] The id of the message to cancel (optional)
      * @param {number} [sampleCount] The number of samples to truncate past for the ongoing generation
      * @returns {{item: (AssistantItemType | null)}}
      */
-    cancelResponse(id: string, sampleCount?: number): {
+    cancelResponse(id?: string, sampleCount?: number): {
         item: (AssistantItemType | null);
     };
     /**
@@ -311,7 +311,7 @@ export class RealtimeClient extends RealtimeEventHandler {
 /**
  * Valid audio formats
  */
-export type AudioFormatType = "Audio24KHz16Bit48KbpsMonoOpus" | "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw44100Hz16BitMonoPcm" | "MonoMp3";
+export type AudioFormatType = "Audio16KHz16BitMonoOpus" | "Raw8KHz16BitMonoPcm" | "Raw16KHz16BitMonoPcm" | "Raw24KHz16BitMonoPcm" | "Raw44KHz16BitMonoPcm" | "MonoMp3";
 export type AudioTranscriptionType = {
     model: "whisper-1";
 };
